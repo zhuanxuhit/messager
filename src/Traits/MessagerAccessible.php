@@ -3,13 +3,12 @@
 namespace Nt\Messager\Traits;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Nt\Messager\Notify;
 use Nt\Messager\Subscription;
 use Nt\Messager\UserNotify;
 
-trait MessageAccessible {
+trait MessagerAccessible {
 
     /**
      * @param $user_id
