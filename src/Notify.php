@@ -20,6 +20,7 @@ class Notify extends Model {
     const ACTION_TYPES = [
         'like',
         'collect',
+        'comment',
     ];
 
     protected $fillable = [
