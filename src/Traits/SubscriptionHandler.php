@@ -11,7 +11,8 @@ trait SubscriptionHandler {
 
     public static function subscribe( $user_id, $target_id, $target_type, $reason )
     {
-        $actions       = Subscription::$reasonAction[ $reason ];
+        $reasonAction = config('messager.reasonAction');
+        $actions       = $reasonAction[ $reason ];
         $actions       = new Collection( $actions );
         $subscriptions = $actions->map( function ( $action ) use ( $user_id, $target_id, $target_type ) {
             return [
