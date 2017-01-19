@@ -1,3 +1,6 @@
+本项目是基于 [消息系统设计与实现](http://www.jianshu.com/p/f4d7827821f1)的实作，具体的设计可以看原文
+
+## 消息分类
 消息有三种分类：
 
 公告 Announce
@@ -41,15 +44,20 @@ someone's = 提醒的动作作用对象的所有者，标记为targetOwner
 subscribReason = 喜欢，对应着 actions = [更新，评论]
 subscribReason = 发布，对应着 actions = [评论]
 
-## 五个实体
+## 3个表
 1. 用户消息队列 UserNotify
-2. 用户 User
-3. 订阅 Subscription
-4. 订阅设置 SubscriptionConfig
-5. 消息 Notify
+2. 订阅 Subscription
+3. 消息 Notify
     - 通告 Announce
     - 提醒 Remind
     - 信息 Message
     
-## 表设计
+## 使用方式
+
+1. clone 本项目到 laravel project 的 repositories/messager目录下
+2. 修改composer.json新增 "Nt\\Messager\\":"repositories/messager/src"
+3. 修改config/app.php Nt\Messager\MessagerServiceProvider::class
+4. 新建数据库 php artisan db:seed
+5. 所有接口都在 Nt\Messager\Services\NotifyService
+
 
